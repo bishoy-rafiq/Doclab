@@ -108,7 +108,6 @@ a,
 img,
 span,
 time,
-input,
 button,
 ion-icon { display: block; }
 
@@ -119,17 +118,14 @@ a {
 
 img { height: auto; }
 
-input,
+
 button {
   background: none;
   border: none;
   font: inherit;
 }
 
-input {
-  width: 100%;
-  outline: none;
-}
+
 
 button { cursor: pointer; }
 
@@ -261,12 +257,6 @@ body.nav-active { overflow: hidden; }
 
 [data-reveal="bottom"].revealed { transform: translateY(0); }
 
-[data-reveal="left"] { transform: translateX(-50px); }
-
-[data-reveal="right"] { transform: translateX(50px); }
-
-[data-reveal="left"].revealed,
-[data-reveal="right"].revealed { transform: translateX(0); }
 
 
 
