@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-
+  <!--/**
+  * copyright 2024 Bishoy Rafeq
+  */-->
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,9 +11,9 @@
   <!-- 
     - primary meta tags
   -->
-  <title>Doclab - home</title>
-  <meta name="title" content="Doclab - home">
-  <meta name="description" content="This is a madical html template made by codewithsadee">
+  <title>عيادات الأسرة - AlusraClinics</title>
+  <meta name="title" content="عيادات الأسرة - AlusraClinics">
+  <meta name="description" content="عيادات أسنان تُشعرك بالأولوية | للحجز والاستفسار: واتساب وهاتف 0137233900">
 
   <!-- 
     - favicon
@@ -23,7 +25,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Outfit:wght@100..900&display=swap"
     rel="stylesheet">
 
   <!-- 
@@ -60,79 +62,80 @@
   <header class="header" data-header>
     <div class="container">
 
-      <a href="#" class="logo">
-        <img src="./assets/images/logo.svg" width="136" height="46" alt="Doclab home">
+      <a href="#Home" class="logo">
+        <img src="./assets/images/Logo.png" width="136" height="46" loading="lazy" alt="AlusraClinics home">
       </a>
+
 
       <nav class="navbar" data-navbar>
 
         <div class="navbar-top">
 
-          <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="136" height="46" alt="Doclab home">
+          <a href="#Home" class="logo">
+            <img src="./assets/images/Logo.png" width="136" height="46" loading="lazy" alt="AlusraClinics home">
           </a>
 
           <button class="nav-close-btn" aria-label="clsoe menu" data-nav-toggler>
             <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
           </button>
 
+
         </div>
 
         <ul class="navbar-list">
-
           <li class="navbar-item" data-nav-link>
-            <a href="#Home" class="navbar-link title-md">Home</a>
+            <a href="#Home" class="navbar-link title-md" data-ar="الرئيسية" data-en="Home">الرئيسية</a>
           </li>
 
           <li class="navbar-item" data-nav-link>
-            <a href="#Services" class="navbar-link title-md">Services</a>
-          </li>
-          
-          <li class="navbar-item" data-nav-link>
-            <a href="#Doctors" class="navbar-link title-md">Doctors</a>
+            <a href="#Services" class="navbar-link title-md" data-ar="خدماتنا" data-en="Services">خدماتنا</a>
           </li>
 
           <li class="navbar-item" data-nav-link>
-            <a href="#Blog" class="navbar-link title-md">Blog</a>
+            <a href="#about" class="navbar-link title-md" data-ar="من نحن" data-en="About US">About</a>
           </li>
 
           <li class="navbar-item" data-nav-link>
-            <a href="#Contact" class="navbar-link title-md">Contact</a>
+            <a href="#Blog" class="navbar-link title-md" data-ar="مقالات" data-en="Articles">Articles</a>
           </li>
 
+          <li class="navbar-item" data-nav-link>
+            <a href="#Contact" class="navbar-link title-md" data-ar="تواصل معنا" data-en="Contact">Contact</a>
+          </li>
+          <div class="btn has-before language-selector">
+            <button id="languageBtn" onclick="toggleLanguage()">عربي</button>
+          </div>
         </ul>
 
         <ul class="social-list">
 
+
+
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a target="_blank"
+              href="https://www.snapchat.com/add/alusraclinics?sender_web_id=fce658d2-6e4e-4611-9479-f9ab9678b2c7&device_type=desktop&is_copy_url=true"
+              class="social-link">
+              <ion-icon name="logo-snapchat"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a target="_blank"
+              href="https://api.whatsapp.com/send/?phone=966137233900&text&type=phone_number&app_absent=0"
+              class="social-link">
+              <ion-icon name="logo-whatsapp"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-pinterest"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
+            <a target="_blank"
+              href="https://www.instagram.com/alusraclinics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
 
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-youtube"></ion-icon>
-            </a>
-          </li>
+
 
         </ul>
 
@@ -141,8 +144,6 @@
       <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
         <ion-icon name="menu-outline"></ion-icon>
       </button>
-
-      <a href="#" class="btn has-before title-md">Make Appointment</a>
 
       <div class="overlay" data-nav-toggler data-overlay></div>
 
@@ -160,42 +161,32 @@
         - #HERO
       -->
 
-      <section class="section hero" style="background-image: url('./assets/images/hero-bg.png')" aria-label="home" id="Home">
+      <section class="section hero" style="background-image: url('./assets/images/hero-bg.png')" aria-label="home"
+        id="Home">
         <div class="container">
 
           <div class="hero-content">
 
-            <p class="hero-subtitle has-before" data-reveal="left">Welcome To Doclab</p>
+            <p class="hero-subtitle has-before" data-reveal="left" data-ar="  مرحبا بك في عيادات الأسرة "
+              data-en="Welcome To Alusra Clinics">Welcome To Alusra Clinics</p>
 
-            <h1 class="headline-lg hero-title" data-reveal="left">
-              Find Nearest <br>
-              Doctor.
+            <h1 class="headline-lg hero-title" data-reveal="left" data-ar="عيادات الأسرة لطب الأسنان والجلدية"
+              data-en="Alusra Clinics Dentistry and dermatology">
+              Health and<br>
+              beauty
             </h1>
 
             <div class="hero-card" data-reveal="left">
-
-              <p class="title-lg card-text">
-                Search doctors. clinics. hospitals. etc.
-              </p>
-
-              <div class="wrapper">
-
-                <div class="input-wrapper title-lg">
-                  <input type="text" name="location" placeholder="Locations" class="input-field">
-
-                  <ion-icon name="location"></ion-icon>
-                </div>
-
-                <button class="btn has-before">
-                  <ion-icon name="search"></ion-icon>
-
-                  <span class="span title-md">Find Now</span>
-                </button>
-
+              <div class="input-wrapper">
+                <p><ion-icon name="location"></ion-icon><span data-ar="Hafar Al Baten, حفر الباطن, SA"
+                    data-en="Hafar Al Baten, hafr albatin, SA"></span></p>
               </div>
-
+              <div class="wrapper">
+                <button class="btn has-before" onclick="openFixedLocation()">
+                  <span class="span title-md" data-ar="انتقل إلى الخرائط" data-en="Go To Maps">Go To Maps</span>
+                </button>
+              </div>
             </div>
-
           </div>
 
           <figure class="hero-banner" data-reveal="right">
@@ -223,87 +214,50 @@
               <div class="service-card" data-reveal="bottom">
 
                 <div class="card-icon">
-                  <img src="./assets/images/icon-1.png" width="71" height="71" loading="lazy" alt="icon">
+                  <img src="./assets/images/pngegg.png" width="100" height="71" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="headline-sm card-title">
-                  <a href="#">Psychiatry</a>
+                  <a href="#LISTING" data-ar="طب الأسنان الحديث...ابتسامة تدوم"
+                    data-en="Modern dentistry...a smile that lasts"></a>
                 </h3>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                <p class="card-text"
+                  data-ar="عيادة أسنان متخصصة تقدم أحدث تقنيات الرعاية والعلاج لضمان ابتسامة صحية وجميلة تدوم."
+                  data-en="A specialized dental clinic that provides the latest care and treatment technologies to ensure a healthy and beautiful smile that lasts.">
                 </p>
 
-                <button class="btn-circle" aria-label="read more about psychiatry">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-
+                <a href="#LISTING"><button class="btn-circle" aria-label="read more about psychiatry">
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </button>
+                </a>
               </div>
             </li>
+
+
+
 
             <li>
               <div class="service-card" data-reveal="bottom">
 
                 <div class="card-icon">
-                  <img src="./assets/images/icon-2.png" width="71" height="71" loading="lazy" alt="icon">
+                  <img src="./assets/images/Skin diseases.png" width="100" height="71" loading="lazy" alt="icon">
                 </div>
 
                 <h3 class="headline-sm card-title">
-                  <a href="#">Gynecology</a>
+                  <a href="#2" data-ar="عناية متكاملة بالبشرة للحصول على أفضل النتائج!"
+                    data-en="Integrated skin care for the best results!"></a>
                 </h3>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
+                <p class="card-text"
+                  data-ar="نقدم حلولاً متكاملة للعناية بالبشرة لتحقيق أفضل النتائج لبشرة صحية ومشرقة."
+                  data-en="We provide integrated skin care solutions to achieve the best results for healthy, glowing skin.">
                 </p>
 
-                <button class="btn-circle" aria-label="read more about Gynecology">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-3.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Pulmonology</a>
-                </h3>
-
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                </p>
-
-                <button class="btn-circle" aria-label="read more about Pulmonology">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="service-card" data-reveal="bottom">
-
-                <div class="card-icon">
-                  <img src="./assets/images/icon-4.png" width="71" height="71" loading="lazy" alt="icon">
-                </div>
-
-                <h3 class="headline-sm card-title">
-                  <a href="#">Orthopedics</a>
-                </h3>
-
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing
-                </p>
-
-                <button class="btn-circle" aria-label="read more about Orthopedics">
-                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
-                </button>
-
+                <a href="#2"> <button class="btn-circle" aria-label="read more about Orthopedics">
+                    <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                  </button>
+                </a>
               </div>
             </li>
 
@@ -320,40 +274,53 @@
         - #ABOUT
       -->
 
-      <section class="section about" aria-labelledby="about-label" id="Doctors">
+      <section class="section about" aria-labelledby="about-label" id="about">
         <div class="container">
 
           <div class="about-content">
 
-            <p class="section-subtitle title-lg has-after" id="about-label" data-reveal="left">About Us</p>
+            <p class="section-subtitle title-lg has-after" id="about-label" data-reveal="left" data-ar="من نحن"
+              data-en="about us"></p>
 
-            <h2 class="headline-md" data-reveal="left">Experienced Workers</h2>
+            <h2 class="headline-md" data-reveal="left" data-ar="في عيادتنا المتخصصة"
+              data-en="In our specialized clinic"></h2>
 
-            <p class="section-text" data-reveal="left">
-              Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
-              Aliquam
+            <p class="section-text" data-reveal="left" data-ar="نحن نقدم لك رعاية صحية عالية الجودة تهدف إلى تحسين صحة فمك وبشرتك. من خلال فريق من الأطباء ذوي الخبرة،
+            والتقنيات الحديثة، والأدوات المتطورة، نحرص على تقديم حلول مبتكرة وفعّالة لكل من مشاكل الأسنان والعناية
+            بالبشرة." data-en="We provide you with high-quality healthcare aimed at improving your oral and skin health. Through a team of experienced doctors,
+            With modern technologies and advanced tools, we are keen to provide innovative and effective solutions to both dental and care problems
+            With skin.">
             </p>
 
             <ul class="tab-list" data-reveal="left">
 
               <li>
-                <button class="tab-btn active">Vision</button>
+                <button class="tab-btn active" id="2" data-ar="خدمات طب الأسنان" data-en="Dental services"></button>
               </li>
-
-              <li>
-                <button class="tab-btn">Mission</button>
-              </li>
-
-              <li>
-                <button class="tab-btn">Strategy</button>
-              </li>
-
             </ul>
+            <p class="tab-text" data-reveal="left" data-ar="تبييض، تنظيف، تقويم، جراحة وزراعة الأسنان — نحن هنا لنساعدك على
+            استعادة ابتسامتك الجميلة بثقة." data-en="Whitening, cleaning, orthodontics, dental surgery and implants — we are here to help you
+            Restore your beautiful smile with confidence."></p>
+            <ul class="tab-list" data-reveal="left">
 
-            <p class="tab-text" data-reveal="left">
-              Aliquam faucibus, odio nec commodo aliquam, neque felis placerat dui, a porta ante lectus dapibus est.
-              Aliquam a bibendum mi, sed condimentum
+              <li>
+                <button class="tab-btn active" data-ar="خدمات الأمراض الجلدية" data-en="Dermatology services"></button>
+              </li>
+            </ul>
+            <p class="tab-text" data-reveal="left" data-ar="   علاج الأمراض الجلدية المختلفة، العناية بالبشرة، علاج حب الشباب، تجديد البشرة — نحن نقدم لك العناية الأمثل
+            لبشرة صحية ونضرة." data-en="Treatment of various skin diseases, skin care, acne treatment, skin rejuvenation — we offer you optimal care
+            For healthy and fresh skin.">
+
             </p>
+            <p class="tab-text" data-reveal="left" data-ar="نحن في عيادتنا نولي اهتمامًا خاصًا لتوفير بيئة مريحة وآمنة لعملائنا، مع ضمان توفير علاج يتناسب مع احتياجات
+            كل فرد.
+
+            دعنا نساعدك في الحصول على الابتسامة المشرقة والبشرة الصحية التي تستحقها!" data-en="In our clinic, we pay special attention to providing a comfortable and safe environment for our clients, while ensuring that we provide treatment that suits their needs
+            Everyone.
+
+            Let us help you get the bright smile and healthy skin you deserve!">
+            </p>
+
 
             <div class="wrapper">
 
@@ -362,25 +329,25 @@
                 <li class="about-item" data-reveal="left">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
 
-                  <span class="span">Sonsectetur adipisicing elit</span>
+                  <span class="span" data-ar="رعاية صحية عالية الجودة " data-en="High quality health care"></span>
                 </li>
 
                 <li class="about-item" data-reveal="left">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
 
-                  <span class="span">Exercitation ullamco laboris</span>
+                  <span class="span" data-ar="تقنيات حديثة" data-en="Modern technologies"></span>
                 </li>
 
                 <li class="about-item" data-reveal="left">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
 
-                  <span class="span">Eiusmod tempor incididunt</span>
+                  <span class="span" data-ar="أدوات متقدمة" data-en="Advanced tools"></span>
                 </li>
 
                 <li class="about-item" data-reveal="left">
                   <ion-icon name="checkmark-circle-outline"></ion-icon>
 
-                  <span class="span">Aolore magna aliqua</span>
+                  <span class="span" data-ar="أطباء ذوي خبرة عالية" data-en="Highly experienced doctors"></span>
                 </li>
 
               </ul>
@@ -405,15 +372,17 @@
         - #LISTING
       -->
 
-      <section class="section listing" aria-labelledby="listing-label">
+      <section class="section listing" aria-labelledby="listing-label" id="LISTING">
         <div class="container">
 
           <ul class="grid-list">
 
             <li>
-              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left">Doctors Listig</p>
+              <p class="section-subtitle title-lg" id="listing-label" data-reveal="left" data-ar=" خدمات ذات صله"
+                data-en="Related services"></p>
 
-              <h2 class="headline-md" data-reveal="left">Browse by specialist</h2>
+              <h2 class="headline-md" data-reveal="left" data-ar=" صحه الفم والاسنان" data-en="Oral and dental health">
+              </h2>
             </li>
 
             <li>
@@ -424,9 +393,10 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Psychiatry</h3>
+                  <h3 class="headline-sm card-title" data-ar="تقويم الأسنان" data-en="Orthodontics"> </h3>
 
-                  <p class="card-text">Porta velit</p>
+                  <p class="card-text" data-ar="ابتسامة متناسقة مع تقويم الأسنان!"
+                    data-en="A harmonious smile with braces!"></p>
                 </div>
 
               </div>
@@ -440,9 +410,11 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Gynecology</h3>
+                  <h3 class="headline-sm card-title" data-ar="علاج وتجميل اللثة"
+                    data-en="Gum treatment and beautification"></h3>
 
-                  <p class="card-text">Mattis augue</p>
+                  <p class="card-text" data-ar="لثتك الصحية سر ابتسامتك الجميلة!"
+                    data-en="Healthy gums are the secret to your beautiful smile!"></p>
                 </div>
 
               </div>
@@ -456,9 +428,11 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Pulmonology</h3>
+                  <h3 class="headline-sm card-title" data-ar="طب الأسنان وطب الأسنان التجميلي"
+                    data-en="Dentistry and cosmetic dentistry"></h3>
 
-                  <p class="card-text">Mauris laoreet</p>
+                  <p class="card-text" data-ar="ابتسامة صحية وجميلة تبدأ من هنا!"
+                    data-en="A healthy, beautiful smile starts here!"></p>
                 </div>
 
               </div>
@@ -472,9 +446,10 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Orthopedics</h3>
+                  <h3 class="headline-sm card-title" data-ar="طب أسنان الأطفال" data-en="Pediatric dentistry"></h3>
 
-                  <p class="card-text">Convallis vulputate</p>
+                  <p class="card-text" data-ar="ابتسامة طفلك تبدأ بعناية أسنان مبكرة!"
+                    data-en="Your child's smile starts with early dental care!"></p>
                 </div>
 
               </div>
@@ -488,9 +463,10 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Pediatrics</h3>
+                  <h3 class="headline-sm card-title" data-ar="علاج جذور الاسنان" data-en="Root canal treatment"></h3>
 
-                  <p class="card-text">Posuere maecenas</p>
+                  <p class="card-text" data-ar="علاج جذور الأسنان لاستعادةالراحةوالصحة!"
+                    data-en="Root canal treatment to restore comfort and health!"></p>
                 </div>
 
               </div>
@@ -504,9 +480,11 @@
                 </div>
 
                 <div>
-                  <h3 class="headline-sm card-title">Osteology</h3>
+                  <h3 class="headline-sm card-title" data-ar="جراحة وزراعة الأسنان"
+                    data-en="Dental surgery and implants"></h3>
 
-                  <p class="card-text">Nisi nullam</p>
+                  <p class="card-text" data-ar="ابتسامةجديدة تبدأبزراعةالأسنان!"
+                    data-en="A new smile begins with dental implants!"></p>
                 </div>
 
               </div>
@@ -528,11 +506,13 @@
       <section class="section blog" aria-labelledby="blog-label" id="Blog">
         <div class="container">
 
-          <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom">
-            News & Article
+          <p class="section-subtitle title-lg text-center" id="blog-label" data-reveal="bottom"
+            data-ar="الأخبار و المقالات" data-en="News & articles">
+
           </p>
 
-          <h2 class="section-title headline-md text-center" data-reveal="bottom">Latest Articles</h2>
+          <h2 class="section-title headline-md text-center" data-reveal="bottom" data-ar="مقالات" data-en="Articles">
+          </h2>
 
           <ul class="grid-list">
 
@@ -544,27 +524,30 @@
                   <div class="card-meta">
                     <ion-icon name="person-outline"></ion-icon>
 
-                    <span class="span">By Admin</span>
+                    <span class="span" data-ar="بواسطة متخصص" data-en="By specialist">بواسطة متخصص</span>
                   </div>
 
                   <div class="card-meta">
                     <ion-icon name="folder-outline"></ion-icon>
 
-                    <span class="span">Specialist</span>
+                    <span class="span" data-ar="متخصص" data-en="specialized">متخصص</span>
                   </div>
 
                 </div>
 
-                <h3 class="headline-sm card-title">Could intermittent fasting reduce breast cancer</h3>
+                <h3 class="headline-sm card-title" data-ar="طريقة حماية أسنان أطفالك"
+                  data-en="How to Protect Your Child's Teeth"></h3>
 
-                <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
+                <time class="title-sm date" datetime="2024-11-14" data-en="14 ,November 2024"
+                  data-ar="14 نوفمبر, 2024">14 نوفمبر, 2024</time>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore et dolore magna aliquyam erat
+                <p class="card-text" data-ar=" إحدى الطرق الفعّالة لحماية أسنان الأطفال هي استخدام الفلورايد بانتظام. يمكنك اختيار معجون أسنان يحتوي
+                على الفلورايد المناسب لعمر الطفل، حيث يساعد الفلورايد في تقوية مينا الأسنان وحمايتها من التسوس."
+                  data-en="One effective way to protect children's teeth is to use fluoride regularly. You can choose a toothpaste that contains:
+                Get fluoride appropriate for the child’s age, as fluoride helps strengthen tooth enamel and protect it from decay.">
                 </p>
 
-                <a href="#" class="btn-text title-lg">Read More</a>
+                <a href="#Contact" class="btn-text title-lg" data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</a>
 
               </div>
             </li>
@@ -577,27 +560,29 @@
                   <div class="card-meta">
                     <ion-icon name="person-outline"></ion-icon>
 
-                    <span class="span">By Admin</span>
+                    <span class="span" data-ar="بواسطة متخصص" data-en="By specialist">بواسطة متخصص</span>
                   </div>
 
                   <div class="card-meta">
                     <ion-icon name="folder-outline"></ion-icon>
 
-                    <span class="span">Specialist</span>
+                    <span class="span" data-ar="متخصص" data-en="specialized">متخصص</span>
                   </div>
 
                 </div>
 
-                <h3 class="headline-sm card-title">Give children more autonomy during the pandemic</h3>
+                <h3 class="headline-sm card-title" data-ar=" التهاب اللثة" data-en="Gingivitis"></h3>
 
-                <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
-
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore et dolore magna aliquyam erat
+                <time class="title-sm date" datetime="2024-11-14" data-en="14 ,November 2024"
+                  data-ar="14 نوفمبر, 2024">14 نوفمبر, 2024</time>
+                <p class="card-text" data-ar=" هو حالة شائعة تحدث نتيجة تراكم البكتيريا والبلاك على طول خط اللثة، مما يؤدي إلى احمرارها وتورمها
+                وأحيانًا نزيفها. قد يكون التهاب اللثة غير مؤلم في بداياته، ولكنه قد يتطور إلى مشاكل أكثر خطورة مثل
+                التهاب دواعم السن إذا لم يُعالج." data-en="It is a common condition that occurs as a result of the accumulation of bacteria and plaque along the gum line, leading to redness and swelling
+                And sometimes it bleeds. Gingivitis may be painless at first, but it may develop into more serious problems such as:
+                Periodontitis if not treated.">
                 </p>
 
-                <a href="#" class="btn-text title-lg">Read More</a>
+                <a href="#Contact" class="btn-text title-lg" data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</a>
 
               </div>
             </li>
@@ -610,27 +595,35 @@
                   <div class="card-meta">
                     <ion-icon name="person-outline"></ion-icon>
 
-                    <span class="span">By Admin</span>
+                    <span class="span" data-ar="بواسطة متخصص" data-en="By specialist">بواسطة متخصص</span>
                   </div>
 
                   <div class="card-meta">
                     <ion-icon name="folder-outline"></ion-icon>
 
-                    <span class="span">Specialist</span>
+                    <span class="span" data-ar="متخصص" data-en="specialized">متخصص</span>
                   </div>
 
                 </div>
 
-                <h3 class="headline-sm card-title">How do binge eating and drinking impact the liver?</h3>
+                <h3 class="headline-sm card-title" data-ar=" فوائد زراعة الأسنان" data-en="Benefits of dental implants">
+                </h3>
 
-                <time class="title-sm date" datetime="2022-01-28">28 January, 2022</time>
+                <time class="title-sm date" datetime="2024-11-14" data-en="14 ,November 2024"
+                  data-ar="14 نوفمبر, 2024">14 نوفمبر, 2024</time>
 
-                <p class="card-text">
-                  Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
-                  labore et dolore magna aliquyam erat
+
+                <p class="card-text" data-ar="     استعادة الابتسامة والمظهر الطبيعي تساعد الزراعة في تحسين شكل الابتسامة بشكل دائم.
+                ثبات قوي ودائم تمنحك شعورًا بالثبات عند المضغ والكلام، لأنها تُزرع في العظم.
+                حماية صحة العظام تمنع زراعة الأسنان تآكل عظام الفك الناتج عن فقدان الأسنان.
+                عناية سهلة يمكن العناية بالأسنان المزروعة مثل الأسنان الطبيعية." data-en="Restoring the smile and its natural appearance. Implants help improve the appearance of the smile permanently.
+                Strong and durable stability They give you a stable feeling when chewing and speaking, because they are implanted in the bone.
+                Protecting Bone Health Dental implants prevent jaw bone wear and tear resulting from tooth loss.
+                Easy care Implant teeth can be cared for just like natural teeth.">
+
                 </p>
 
-                <a href="#" class="btn-text title-lg">Read More</a>
+                <a href="#Contact" class="btn-text title-lg" data-ar="اقرأ المزيد" data-en="Read More">اقرأ المزيد</a>
 
               </div>
             </li>
@@ -659,7 +652,7 @@
         <div class="footer-brand" data-reveal="bottom">
 
           <a href="#" class="logo">
-            <img src="./assets/images/logo.svg" width="136" height="46" loading="lazy" alt="Doclab home">
+            <img src="./assets/images/Logo.png" width="136" height="46" loading="lazy" alt="AlusraClinics home">
           </a>
 
           <ul class="contact-list has-after">
@@ -672,11 +665,11 @@
 
               <div>
                 <p>
-                  Main Email : <a href="mailto:contact@website.com" class="contact-link">contact@&shy;website.com</a>
+                  Email : <a href="mailto:alusraclinics@gmail.com" class="contact-link">alusraclinics@&shy;gmail.com</a>
                 </p>
 
                 <p>
-                  Inquiries : <a href="mailto:Info@mail.com" class="contact-link">Info@mail.com</a>
+                  Send by email : <a href="mailto:alusraclinics@gmail.com" class="contact-link">alusraclinics@gmail.com</a>
                 </p>
               </div>
 
@@ -690,11 +683,13 @@
 
               <div>
                 <p>
-                  Office Telephone : <a href="tel:0029129102320" class="contact-link">0029129102320</a>
+                  whatsapp :<a target="_blank"
+                  href="https://api.whatsapp.com/send/?phone=966137233900&text&type=phone_number&app_absent=0"
+                  class="contact-link"> +966 137 233 900</a>
                 </p>
 
                 <p>
-                  Mobile : <a href="tel:000232439493" class="contact-link">000 2324 39493</a>
+                  Mobile : <a href="tel:+966137233900" class="contact-link">+966 137 233 900</a>
                 </p>
               </div>
 
@@ -706,19 +701,20 @@
 
         <div class="footer-list" data-reveal="bottom">
 
-          <p class="headline-sm footer-list-title">About Us</p>
+          <p class="headline-sm footer-list-title" data-ar="معلومات عنا" data-en="About Us"></p>
 
-          <p class="text">
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+          <p class="text" data-ar="الألم في حد ذاته مهم جدًا، لكن سيتم تسويته هنا"
+            data-en="The pain itself is very important, but that will be sorted out here">
           </p>
 
           <address class="address">
-            <ion-icon name="map-outline"></ion-icon>
+            <a href="" class="address" onclick="openFixedLocation()">
+              <ion-icon name="map-outline"></ion-icon>
 
-            <span class="text">
-              2416 Mapleview Drive <br>
-              Tampa, FL 33634
-            </span>
+              <span class="text" data-ar="Hafar Al Baten, حفر الباطن, SA" data-en="Hafar Al Baten, حفر الباطن, SA">
+
+              </span>
+            </a>
           </address>
 
         </div>
@@ -726,31 +722,34 @@
         <ul class="footer-list" data-reveal="bottom">
 
           <li>
-            <p class="headline-sm footer-list-title">Services</p>
+            <p class="headline-sm footer-list-title" data-ar="طب الأسنان" data-en="Dentistry"></p>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Conditions</a>
+            <a href="#LISTING" class="text footer-link" data-ar="تقويم الأسنان" data-en="Orthodontics"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Listing</a>
+            <a href="#LISTING" class="text footer-link" data-ar="
+            علاج وتجميل اللثة" data-en="Gum treatment and beautification"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">How It Works</a>
+            <a href="#LISTING" class="text footer-link" data-ar="طب الأسنان وطب الأسنان التجميلي"
+              data-en="Dentistry and cosmetic dentistry"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">What We Offer</a>
+            <a href="#LISTING" class="text footer-link" data-ar="طب أسنان الأطفال" data-en="Pediatric dentistry"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Latest News</a>
+            <a href="#LISTING" class="text footer-link" data-ar="علاج جذور الاسنان" data-en="Root canal treatment"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Contact Us</a>
+            <a href="#LISTING" class="text footer-link" data-ar="جراحة وزراعة الأسنان"
+              data-en="Dental surgery and implants"></a>
           </li>
 
         </ul>
@@ -758,93 +757,60 @@
         <ul class="footer-list" data-reveal="bottom">
 
           <li>
-            <p class="headline-sm footer-list-title">Useful Links</p>
+            <p class="headline-sm footer-list-title" data-ar="الأمراض الجلدية" data-en="Dermatology"></p>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Conditions</a>
+            <a href="#2" class="text footer-link" data-ar="العناية بالبشرة" data-en="skin care"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Terms of Use</a>
+            <a href="#2" class="text footer-link" data-ar="علاج حب الشباب" data-en="Acne treatment"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Our Services</a>
+            <a href="#2" class="text footer-link" data-ar="تجديد البشرة" data-en="Skin rejuvenation"></a>
           </li>
 
           <li>
-            <a href="#" class="text footer-link">Join as a Doctor</a>
+            <a href="#" class="text footer-link" data-ar="أمراض جلدية أخرى" data-en="Other skin diseases"></a>
           </li>
-
-          <li>
-            <a href="#" class="text footer-link">New Guests List</a>
-          </li>
-
-          <li>
-            <a href="#" class="text footer-link">The Team List</a>
-          </li>
-
         </ul>
-
-        <div class="footer-list" data-reveal="bottom">
-
-          <p class="headline-sm footer-list-title">Subscribe</p>
-
-          <form action="" class="footer-form">
-            <input type="email" name="email" placeholder="Email" class="input-field title-lg">
-
-            <button type="submit" class="btn has-before title-md">Subscribe</button>
-          </form>
-
-          <p class="text">
-            Get the latest updates via email. Any time you may unsubscribe
-          </p>
-
-        </div>
-
       </div>
 
       <div class="footer-bottom">
 
-        <p class="text copyright">
-          &copy; Doclab 2024 | All Rights Reserved by Bishoy Rafiq
-        </p>
-
+       <a href="https://www.facebook.com/beshoyp0" target="_blank" rel="noopener noreferrer"> <p class="text copyright">
+          &copy; AlusraClinics 2024 | All Rights Reserved by Bishoy Rafiq
+        </p></a>
         <ul class="social-list">
 
+
+
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-facebook"></ion-icon>
+            <a target="_blank"
+              href="https://www.snapchat.com/add/alusraclinics?sender_web_id=fce658d2-6e4e-4611-9479-f9ab9678b2c7&device_type=desktop&is_copy_url=true"
+              class="social-link">
+              <ion-icon name="logo-snapchat"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+            <a target="_blank"
+              href="https://api.whatsapp.com/send/?phone=966137233900&text&type=phone_number&app_absent=0"
+              class="social-link">
+              <ion-icon name="logo-whatsapp"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-google"></ion-icon>
+            <a target="_blank"
+              href="https://www.instagram.com/alusraclinics?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+              class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
-          </li>
-
-          <li>
-            <a href="#" class="social-link">
-              <ion-icon name="logo-pinterest"></ion-icon>
-            </a>
-          </li>
-
         </ul>
-
       </div>
 
     </div>

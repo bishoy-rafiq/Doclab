@@ -1,6 +1,8 @@
 'use strict';
 
-
+/**
+ * copyright 2024 Bishoy Rafeq
+ */
 
 /**
  * add event listener on multiple elements
@@ -12,6 +14,38 @@ const addEventOnElements = function (elements, eventType, callback) {
   }
 }
 
+
+// script.js
+
+function toggleLanguage() {
+  // التحقق من اللغة الحالية وتغييرها
+  const currentLanguage = localStorage.getItem("language") === "ar" ? "en" : "ar";
+  localStorage.setItem("language", currentLanguage);
+
+  // تحديث النصوص حسب اللغة الحالية
+  changeLanguage(currentLanguage);
+}
+
+function changeLanguage(language) {
+  // تغيير اتجاه الصفحة بناءً على اللغة
+  document.body.classList.toggle("ar", language === "ar");
+
+  // تحديث الزر ليعرض الرمز المقابل للغة
+  const languageBtn = document.getElementById("languageBtn");
+  languageBtn.textContent = language === "en" ? "عربي" : "English";
+
+  // تحديث النصوص الداخلية حسب اللغة
+  const elements = document.querySelectorAll("[data-en][data-ar]");
+  elements.forEach(element => {
+      element.textContent = element.getAttribute(`data-${language}`);
+  });
+}
+
+// تحميل اللغة الافتراضية عند بدء التحميل، وتحديد "ar" كقيمة ابتدائية
+document.addEventListener("DOMContentLoaded", () => {
+  const savedLanguage = localStorage.getItem("language") || "ar";  // يبدأ بـ "ar" إذا لم تكن اللغة محددة مسبقًا
+  changeLanguage(savedLanguage);
+});
 
 
 /**
@@ -79,6 +113,33 @@ const activeElementOnScroll = function () {
 
 window.addEventListener("scroll", activeElementOnScroll);
 
+function openLocation() {
+  // التحقق من دعم المتصفح لتحديد الموقع
+  if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+          // إذا نجح تحديد الموقع
+          (position) => {
+              const latitude = position.coords.latitude;
+              const longitude = position.coords.longitude;
+              const googleMapsUrl = `https://www.google.com/maps?q=${latitude},${longitude}`;
+              window.open(googleMapsUrl, '_blank'); // فتح موقع المستخدم الحالي في نافذة جديدة
+          },
+          // إذا فشل تحديد الموقع أو رفض المستخدم الإذن
+          (error) => {
+              openFixedLocation(); // الانتقال إلى الموقع الثابت كخيار بديل
+          }
+      );
+  } else {
+      // إذا لم يكن تحديد الموقع مدعومًا، فتح الموقع الثابت مباشرةً
+      openFixedLocation();
+  }
+}
+
+// دالة لفتح الموقع الثابت
+function openFixedLocation() {
+  const fixedLocationUrl = "https://maps.app.goo.gl/wzZbx4qzUbNtn6p56?g_st=iw";
+  window.open(fixedLocationUrl, '_blank'); // فتح الرابط الثابت في نافذة جديدة
+}
 
 
 /**

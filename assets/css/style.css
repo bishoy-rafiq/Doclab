@@ -149,8 +149,14 @@ body {
   color: var(--independece);
   line-height: 1.8;
   overflow: hidden;
+  text-align: left;
+  direction: ltr;
+  font-family: "Cairo", serif;
 }
-
+body.ar {
+  text-align: right;
+  direction: rtl;
+}
 body.loaded { overflow-y: visible; }
 
 body.nav-active { overflow: hidden; }
@@ -214,10 +220,10 @@ body.nav-active { overflow: hidden; }
   background-color: var(--verdigris);
   color: var(--white);
   font-weight: var(--fw-700);
-  padding: 12px 36px;
-  display: flex;
+  padding: 12px 26px;
+ 
   align-items: center;
-  gap: 8px;
+ 
   border-radius: var(--radius-6);
   overflow: hidden;
 }
@@ -227,7 +233,7 @@ body.nav-active { overflow: hidden; }
   left: -100%;
   width: 100%;
   height: 100%;
-  background-color: var(--eerie-black);
+  background-color: var(--midnight-green_a25);
   border-radius: var(--radius-6);
   transition: var(--transition-2);
   z-index: -1;
@@ -310,7 +316,6 @@ body.nav-active { overflow: hidden; }
   #HEADER
 \*-----------------------------------*/
 
-.header .btn { display: none; }
 
 .header {
   position: absolute;
@@ -460,28 +465,22 @@ body.nav-active { overflow: hidden; }
   margin-block-end: 14px;
 }
 
-.hero-card .input-wrapper { position: relative; }
 
-.hero-card .input-field {
-  color: var(--eerie-black);
-  border-block-end: 1px solid var(--gainsboro);
-  padding-inline-end: 18px;
+.hero-card .input-wrapper{padding: 1rem;}
+.hero-card .input-wrapper p {
+  display: flex;
+  align-items: center; 
+  justify-content: center; 
 }
 
-.hero-card .input-wrapper ion-icon {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
+.hero-card .input-wrapper p ion-icon {
   color: var(--verdigris);
+  margin-right: 10px; 
 }
+.hero-card .wrapper .btn{
 
-.hero-card .btn {
   width: 100%;
-  justify-content: center;
-  margin-block-start: 16px;
 }
-
 
 
 
@@ -840,6 +839,7 @@ body.nav-active { overflow: hidden; }
  * responsive for large than 768px screen
  */
 
+
 @media (min-width: 768px) {
 
   /**
@@ -1003,7 +1003,7 @@ body.nav-active { overflow: hidden; }
    * SERVICE
    */
 
-  .service-list { grid-template-columns: repeat(4, 1fr); }
+  .service-list { grid-template-columns: repeat(2, 1fr); }
 
 
 
@@ -1117,7 +1117,7 @@ body.nav-active { overflow: hidden; }
 
   .footer { background-size: auto; }
 
-  .footer-top { grid-template-columns: repeat(4, 1fr); }
+  .footer-top { grid-template-columns: repeat(3, 1fr); }
 
   .footer-brand {
     grid-column: 1 / 5;
